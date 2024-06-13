@@ -8,11 +8,12 @@ CUDA_LINK_LIBS= -lcudart
 
 # Compiler options
 CC=g++
-CC_FLAGS=
+CC_FLAGS=-O2
 CC_LIBS=
 NVCC=nvcc
-NVCC_FLAGS=
+NVCC_FLAGS=-O2
 NVCC_LIBS=
+
 
 # Project file structure
 OBJ_DIR = bin
