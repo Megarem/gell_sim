@@ -16,7 +16,7 @@
 #define Sort_Key_Last -1
 
 #define Max_Simulation_Time (1.f*24*60)
-#define Save_data_gap 360 // min
+#define Save_data_gap 60 // min
 
 #define O2_Default_Concentration 38.f  // mmHg
 #define O2_Diffusion_coef 100000.f // um2 per min

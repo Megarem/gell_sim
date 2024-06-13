@@ -32,6 +32,7 @@
 
 int main(void)
 {
+
 	showGPUinfo(true);
 
 	clock_t Initstart = clock();
@@ -95,6 +96,8 @@ int main(void)
 	//mechanical mesh init
 	MechanicsMesh_struct MecMesh;
 
+  FILE* currentnum_file = fopen("currentnum_values.txt", "w");
+
 	//Simu core
 	float current_cell_time = 0.f;
 	int SimuIter = 0;
@@ -146,6 +149,8 @@ int main(void)
 			filesaveidx = (SimuIter + 1) / iter_savegap;
 			gapsimutimerecord[filesaveidx - 1] = gapduration;
 
+      fprintf(currentnum_file, "%d\n", currentnum);
+
 			if (save_intermediate_Cell) {
 				try {
 					CpuCell = GpuCell;
@@ -183,6 +188,8 @@ int main(void)
 		}
 		//**************************** Save Show Part ****************************//
 	}
+
+  fclose(currentnum_file);
 
 	clock_t Simuend = clock();
 	std::cout << std::endl;

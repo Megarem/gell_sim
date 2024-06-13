@@ -25,7 +25,7 @@ EXE = HDS
 OBJS = $(OBJ_DIR)/Main.o 
 
 # Compile
-$(EXE) : $(OBJS)
+$(EXE) : $(OBJS) include/Definitions.h
 	$(CC) $(CC_FLAGS) $(OBJS) -o $@ $(CUDA_INC_DIR) $(CUDA_LIB_DIR) $(CUDA_LINK_LIBS)
 
 # Compile main .cpp file to object files:
